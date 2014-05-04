@@ -1,0 +1,50 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet author="ssz" id="insert_roles">
+		<insert tableName="ROLE">
+			<column name="id" valueNumeric="1" />
+			<column name="role_name" value="ADMIN" />
+		</insert>
+		<insert tableName="ROLE">
+			<column name="id" valueNumeric="2" />
+			<column name="role_name" value="DATA_BROWSER" />
+		</insert>
+		<insert tableName="ROLE">
+			<column name="id" valueNumeric="3" />
+			<column name="role_name" value="DEVICE_MANAGER" />
+		</insert>
+		<insert tableName="ROLE">
+			<column name="id" valueNumeric="4" />
+			<column name="role_name" value="WATCHER" />
+		</insert>
+	</changeSet>
+	<changeSet author="ssz" id="insert_users">
+		<insert tableName="USERACCOUNT">
+			<column name="id" valueNumeric="1" />
+			<column name="login" value="admin" />
+			<column name="password" value="admin" />
+			<column name="first_name" value="admin_fn" />
+			<column name="last_name" value="admin_ln" />
+			<column name="disabled" valueNumeric="0" />
+		</insert>
+		<insert tableName="USERACCOUNT">
+			<column name="id" valueNumeric="2" />
+			<column name="login" value="dataBrowser" />
+			<column name="password" value="dataBrowser" />
+			<column name="first_name" value="dataBrowser_fn" />
+			<column name="last_name" value="dataBrowser_ln" />
+			<column name="disabled" valueNumeric="0" />
+		</insert>
+		<insert tableName="USERACCOUNT_ROLE">
+			<column name="useraccount_id" valueNumeric="1" />
+			<column name="role_id" valueNumeric="1" />
+		</insert>
+		<insert tableName="USERACCOUNT_ROLE">
+			<column name="useraccount_id" valueNumeric="2" />
+			<column name="role_id" valueNumeric="2" />
+		</insert>
+	</changeSet>
+</databaseChangeLog>

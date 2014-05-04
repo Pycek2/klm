@@ -1,0 +1,68 @@
+<header id="mainHeader">
+	<div class="innerContainer">
+		<h1>Home managment studio</h1>
+		<div id="loginStatus" ng-controller="topBar">
+			<span>Zalogowany jako</span> 
+			<span class="loginMenu">{{firstName}} {{lastName}}</span>
+			<div id="loginPopup">
+				<div class="arrow"></div>
+				<span class="loginMenu">{{firstName}} {{lastName}}</span> - użytkownik
+				<button class="cta logOut" ng-click="logout()">Wyloguj</button>
+				<a href="#">zmień hasło</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</header>
+<section id="sectionPage">
+	<div class="innerContainer">
+		<div ng-include src='"partials/tabs.html"'></div>
+		<div id="newUser">
+			<h3>Nowy użytkownik</h3>
+			<form name="newUserForm">
+				<div class="form-row">
+					<label>Imię</label>
+					<input type="text" name="imie" ng-model="newuser.firstName" required ng-pattern="/^[A-Zęółśążźćń]{2,}$/i">
+					<span class="error" ng-show="newUserForm.imie.$error.required">*</span>	
+					<span class="error" ng-show="newUserForm.imie.$error.pattern">Nieprawidłowy ciąg znaków - min. 2 litery</span>
+				</div>
+				<div class="form-row">
+					<label>Nazwisko</label>
+					<input type="text" name="lastName" required ng-pattern="/^[A-Zęółśążźćń]{2,}(\-)?[A-Zęółśążźćń]{1,}$/i" ng-model="newuser.lastName">
+					<span class="error" ng-show="newUserForm.lastName.$error.required">*</span>	
+					<span class="error" ng-show="newUserForm.lastName.$error.pattern">Nieprawidłowy ciąg znaków - min. 2 litery, maks. jeden -</span>
+				</div>
+				<div class="form-row">
+					<label>Login</label>
+					<input type="text" name="login" ng-model="newuser.login" required ng-pattern="/^[A-Z0-9]{5,}$/i">
+					<span class="error" ng-show="newUserForm.login.$error.required">*</span>	
+					<span class="error" ng-show="newUserForm.login.$error.pattern">Nieprawidłowy ciąg znaków - min. 5 liter</span>	
+				</div>
+				<div class="form-row">
+					<label>Hasło</label>
+					<input type="password" name="haslo" required ng-model="newuser.password" ng-pattern="/^[a-z0-9!@#$%^ęółąśłżźćń]{5,}$/i">
+					<span class="error" ng-show="newUserForm.haslo.$error.required">*</span>	
+					<span class="error" ng-show="newUserForm.haslo.$error.pattern">Nieprawidłowy ciąg znaków - min. 5 znaków</span>
+				</div>
+				<div class="form-row">
+					<label>Adres e-mail</label>
+					<input type="email" name="email" ng-model="newuser.email" required>
+					<span class="error" ng-show="newUserForm.email.$error.required">*</span>
+					<span class="error" ng-show="newUserForm.email.$error.email">Nieprawidłowy adres email</span>		
+				</div>
+				<div class="form-row">
+					<label>Rola</label>
+					<select ng-model="newuser.role" name="role"  ng-options="option as option for option in ['DATA_BROWSER', 'WATCHER', 'DEVICE_MANAGER', 'ADMIN']"  ng-init="newuser.role='DATA_BROWSER'">
+						
+					</select>
+				</div>
+				<input type="hidden" ng-model="newuser.disabled" value="false">
+				<input type="hidden" ng-model="newuser.id" value="0">
+				<div class="form-row">
+					<button ng-click="changeView('users')">anuluj</button>
+					<button ng-click="newUserSubmit()">zapisz</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,43 @@
+<header id="mainHeader">
+	<div class="innerContainer">
+		<h1>Home managment studio</h1>
+		<div id="loginStatus" ng-controller="topBar">
+			<span>Zalogowany jako</span> 
+			<span class="loginMenu">{{firstName}} {{lastName}}</span>
+			<div id="loginPopup">
+				<div class="arrow"></div>
+				<span class="loginMenu">{{firstName}} {{lastName}}</span> - użytkownik
+				<button class="cta logOut" ng-click="logout()">Wyloguj</button>
+				<a href="#">zmień hasło</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</header>
+<section id="sectionPage">
+	<div class="innerContainer">
+		<div ng-include src='"ang/partials/tabs.html"'></div>
+		<div id="userList">
+			<h3>Użytkownicy</h3>
+			<table id="userListTable">
+				<thead>
+					<th>Id</th>
+					<th>Login</th>
+					<th> </th>
+				</thead>
+				<tr ng-repeat="u in userlist">
+					<td>{{u.id}}</td>
+					<td>{{u.login}}</td>
+					<td class="userActions">
+						<button ng-click="removeUser(u.id)">usuń</button>
+						<button ng-click="blockUser(u.id)">zablokuj</button>
+						<button ng-click="changeView('user/edit/{{u.id}}')">edytuj</button>
+						
+					</td>
+				</tr>
+			</table>
+			<a href ng-click="changeView('user/new')" id="newUser" class="cta">Nowy użytkownik</a>
+			
+		</div>
+	</div>
+</section>

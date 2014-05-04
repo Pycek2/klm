@@ -1,0 +1,307 @@
+body{
+	font-family: 'Lato', sans-serif;
+	padding: 0;
+	margin:0;
+}
+
+.innerContainer{
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#mainFooter .innerContainer{
+	border-top: 1px solid rgba(0,0,0,0.1);
+	text-align: center;
+	padding-top: 10px;
+	margin-top: 40px;
+	color:#9E9E9E;
+}
+
+#container{
+}
+
+#homePage h1{
+	text-align: center;
+	font-size: 2.7em;
+	color:#34495E;
+}
+
+.sensorRectangle{
+	width: 200px;
+	height: 200px;
+	float: right;
+	background: #EFF0F2;
+	border-radius: 10px;
+	color: #737373;
+	text-align: center;
+	margin: 20px;
+}
+
+.sensorRectangle h3{
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 1em;
+}
+
+.clear{
+	float: none;
+	clear: both;
+}
+.sensorData{
+	color:#000;
+	font-size: 2em;
+}
+
+.sensorData .data{
+	font-weight: bold;
+}
+
+.sensorData .unit{
+	font-size: .8em;
+}
+
+.sensors{
+	width:50%;
+	float:left;
+}
+
+.loginPanel{
+	max-width: 300px;
+	float:left;
+	text-align: center;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+	border: 1px solid rgba(0,0,0,0.3);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	padding:5px;
+}
+
+input[type="text"]:focus{
+	outline:none;
+	box-shadow: 0 0 2px #3498DB;
+}
+
+#authenticationForm label{
+	width: 50px;
+	text-align: right;
+	padding-right: 5px;
+	display: inline-block;
+}
+
+.cta{
+	padding: 10px 15px;
+	background: #C7C7C7;
+	box-shadow: 0 3px 0 #ABABAB;
+	border:0;
+	border-radius: 5px;
+	color: #fff;
+	text-transform: uppercase;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.cta:hover {
+	box-shadow: 0 1px 0 #ABABAB;
+}
+
+#authenticationForm .loginAction{
+	margin-top: 30px;
+}
+
+#authenticationForm input[type="text"], #authenticationForm input[type="password"] {
+	width: 40%;
+}
+
+#authenticationForm .loginAction:hover{
+	margin-top:32px;
+}
+
+#mainHeader{
+	background: #EBEBEB;
+	padding:3px;
+}
+#mainHeader h1{
+	margin:0;
+	font-size: 1em;
+	color:#34495E;
+	line-height: 2em;
+	float: left;
+}
+
+#loginStatus{
+	line-height: 2em;
+	float: right;
+}
+
+.loginMenu{
+	font-weight: bold;
+	display: inline-block;
+}
+
+#functionsTabs{
+	list-style-type:none;
+	margin: 0;
+	margin-top: 70px;
+	padding: 0;
+}
+
+#functionsTabs li{
+	float:left;
+}
+
+#functionsTabs li a{
+	display: block;
+	border: 1px solid #DEDEDE;
+	color:#6E6E6E;
+	text-decoration: none;
+	padding: 10px 25px;
+	margin-left: 1px;
+	border-radius: 5px 5px 0 0;
+	background: #EBEBEB;
+}
+
+#functionsTabs li a.active{
+	background: #fff;
+	border-bottom: 1px solid #fff;
+}
+
+.sensorsList{
+	margin-top: 40px;
+}
+
+.sensorsList .sensorRectangle{
+	float:left;
+}
+
+#loginPopup{
+	display: none;
+	position: absolute;
+	width: 210px;
+	background: #EBEBEB;
+	border: 1px solid #C7C7C7;
+	text-align: center;
+	padding:10px;
+	border-radius: 8px;
+}
+
+#loginStatus:hover #loginPopup{
+	display: block;
+}
+
+.logOut{
+	display: block;
+	margin:5px auto;
+}
+
+.arrow{
+	border: 8px solid transparent;
+	border-color: transparent transparent #C7C7C7 transparent;
+	display: block;
+	left: 100px;
+	top: -16px;
+	position: absolute;
+	z-index: 135;
+}
+
+#userList, #newUser{
+	margin-top:40px;
+}
+
+#userListTable{
+	margin-left: 20px;
+	border-spacing: 0px;
+    border-collapse: collapse;
+    width:90%;	
+}
+
+#userListTable thead th{
+	border-bottom: 1px solid #C7C7C7;
+	text-align: left;
+}
+
+#userListTable td{
+	line-height: 1.6em;
+}
+
+
+#userListTable tr:nth-child(even) td{
+	background: #F2F2F2;
+}
+
+#userListTable th, #userListTable td{
+	padding:8px 15px;
+}
+
+.userActions button{
+	float: right;
+	display: none;
+}
+
+#userListTable tr:hover .userActions button{
+	display: block;
+}
+
+.userActions{
+	width:200px;
+}
+
+#newUser{
+	font-size: .9em;
+	margin-top: 40px;
+	margin-left: 20px;
+}
+
+.form-row{
+	line-height: 2.5em;
+}
+form label{
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	padding-right: 10px;
+}
+
+#login-error {
+	padding: 10px;
+	text-align:center;
+	color: red;
+}
+
+/* widoki responsywne*/
+
+@media (max-width: 975px) {
+.sensorRectangle{ width: 140px; height: 140px; border-radius: 6px;margin: 10px; }
+.sensorRectangle img {width:61px; height:61px;}
+.sensorRectangle h3{ font-size: .8em}
+.sensorData{ font-size: 1.2em;}
+.sensorData .unit{	font-size: .7em;}
+#homePage h1{ font-size:2em;}
+.loginPanel{ max-width: 250px;}
+p,label{font-size:.9em;}
+.cta{padding: 6px 10px;}
+input[type="text"]{ padding:3px;}
+#functionsTabs li a{padding:8px 22px; font-size:0.9em;}
+#mainHeader h1{ font-size:0.9em;}
+#loginPopup{ width: 180px;padding:8px;border-radius: 6px;}
+#loginStatus{line-height: 1.6em;font-size:0.8em;}
+h3 {font-size:1.0em;}
+#userListTable td{line-height: 1.2em;}
+#userListTable th, #userListTable td{padding:6px 11px;}
+#userListTable{ font-size:0.9em;}
+#newUser{ font-size:0.8em;}
+}
+
+@media (max-width: 655px) {
+/*.innerContainer{ background-color:red;}*/
+.loginPanel{ max-width: 190px;}
+p,label{font-size:.8em;}	
+.sensorRectangle img {width:41px; height:41px;}	
+.sensorRectangle{width: 110px;height: 110px;border-radius: 5px;margin: 5px;}
+#homePage h1{ font-size:1.7em;}
+.sensorData{ font-size: 1em;}
+.sensorData .unit{	font-size: .6em;}
+#functionsTabs li a{padding:5px 15px; font-size:0.8em;}
+}
+
